@@ -101,6 +101,9 @@ const History = () => {
             titleTextSize={17}
           />
           {/* Graph 1 */}
+          <CustomText style={[Styles.normalText, {marginVertical: 15}]}>
+            الارباح المتوقعة
+          </CustomText>
           <MyBezierLineChart />
           <View style={{marginTop: 20}}>
             <CustomText style={[Styles.normalText, {textAlign: 'right'}]}>
