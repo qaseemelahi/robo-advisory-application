@@ -34,7 +34,7 @@ const Portfolio = () => {
           </CustomText>
         </View>
         <View style={styles.inputContainer}>
-          <TextInput style={styles.input} />
+          <TextInput style={styles.input} keyboardType="number-pad" />
           <View style={styles.iconContainer}>
             <Up />
             <Down />

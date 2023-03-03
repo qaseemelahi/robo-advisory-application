@@ -33,7 +33,13 @@ const SortingCard: FC<iProps> = ({
         <CustomText style={styles.price}>{price}</CustomText>
         <View style={[Styles.horizontal, {justifyContent: 'flex-end'}]}>
           {arrow ? <YellowArrow /> : <GreenArrow />}
-          <CustomText style={styles.percentage}>{percentage}</CustomText>
+          <CustomText
+            style={[
+              styles.percentage,
+              {color: arrow ? color.lightYellow : color.green},
+            ]}>
+            {percentage}
+          </CustomText>
         </View>
       </View>
     </View>
