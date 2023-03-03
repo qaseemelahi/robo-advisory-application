@@ -14,6 +14,8 @@ import Portfolio from '../screens/main/portfolio/Portfolio';
 import {color} from '../utils/theme';
 import {StyleSheet, View} from 'react-native';
 import ExchangeScreen from '../screens/main/Exchange/Exchange';
+import HistoryScreen from '../screens/main/History/History';
+
 export type MainStackParams = {
   Home: undefined;
   Porfolio: undefined;
@@ -48,11 +50,7 @@ const tabIcon = (name: string, focused: boolean) => {
     return focused ? (
       <Porfolio width={tabIconWidth} height={tabIconHeight} />
     ) : (
-      <Porfolio
-        width={tabIconWidth}
-        height={tabIconHeight}
-        color={color.blue}
-      />
+      <Porfolio width={tabIconWidth} height={tabIconHeight} />
     );
   } else if (name == ScreenNames.Exchange) {
     return (
@@ -84,8 +82,8 @@ const MainStackNavigator: FC = () => {
     <TabStack.Navigator
       screenOptions={({route}) => ({
         tabBarLabel: tabLabel(route.name),
+        tabBarHideOnKeyboard: true,
         headerShown: false,
-        // tabBarStyle: {height: 60},
         tabBarIcon: ({focused}) => {
           return tabIcon(route.name, focused);
         },
@@ -95,7 +93,7 @@ const MainStackNavigator: FC = () => {
       <TabStack.Screen name={ScreenNames.Home} component={Home} />
       <TabStack.Screen name={ScreenNames.Porfolio} component={Portfolio} />
       <TabStack.Screen name={ScreenNames.Exchange} component={ExchangeScreen} />
-      <TabStack.Screen name={ScreenNames.History} component={Home} />
+      <TabStack.Screen name={ScreenNames.History} component={HistoryScreen} />
       <TabStack.Screen name={ScreenNames.Profile} component={Home} />
     </TabStack.Navigator>
   );

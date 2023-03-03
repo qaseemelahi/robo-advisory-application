@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/DroidSans-Bold.ttf",
+      "sha1": "0f46d7eeb0a96d304059f4ae9dc28771d50fa5fa"
+    },
+    {
+      "path": "src/assets/fonts/DroidSans.ttf",
+      "sha1": "b7a0181a8849b275051a336b8a13c3bc9030e341"
+    },
+    {
       "path": "src/assets/fonts/OpenSans-Bold.ttf",
       "sha1": "c23ede86996d8239865bcd04c806e3789aaa0b94"
     },

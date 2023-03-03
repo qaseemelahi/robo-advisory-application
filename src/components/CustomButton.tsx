@@ -7,9 +7,10 @@ import {
   StyleProp,
   ViewStyle,
   GestureResponderEvent,
+  TextStyle,
 } from 'react-native';
 
-import {color, textSize} from '../utils/theme';
+import {color, DoridFonts, textSize} from '../utils/theme';
 import CustomText from './CustomText';
 
 type ButtonProps = {
@@ -23,6 +24,8 @@ type ButtonProps = {
   addShadow?: boolean;
   icon?: ReactNode;
   titleTextSize?: number;
+  textStyle?: StyleProp<TextStyle>;
+  fontFamily?: string;
 };
 
 const CustomButton: FC<ButtonProps> = ({
@@ -34,6 +37,8 @@ const CustomButton: FC<ButtonProps> = ({
   disabled = false,
   loaderColor,
   titleTextSize,
+  textStyle,
+  fontFamily,
 }: ButtonProps) => {
   const {container, dim} = styles;
 
@@ -52,9 +57,11 @@ const CustomButton: FC<ButtonProps> = ({
         <>
           <CustomText
             style={[
+              textStyle,
               {
                 color: !!titleColor ? titleColor : color.white,
                 fontSize: !!titleTextSize ? titleTextSize : textSize.small,
+                fontFamily: fontFamily ? fontFamily : DoridFonts.regular,
               },
             ]}>
             {title}

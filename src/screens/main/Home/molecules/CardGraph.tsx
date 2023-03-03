@@ -4,7 +4,8 @@ import {color, fonts, textSize} from '../../../../utils/theme';
 import CustomText from '../../../../components/CustomText';
 import {ArrowDown, GraphLine} from '../../../../assets';
 import {Styles} from '../../../../utils/globalStyles';
-
+import MyBezierLineChart from '../../../../components/BezierLineChart';
+import LineChart from '../../../../components/LineChart';
 const CardGraph = () => {
   return (
     <View style={styles.cardContainer}>
@@ -30,6 +31,7 @@ const CardGraph = () => {
           $4,79,988
         </CustomText>
       </View>
+      <LineChart width={''} height={''} />
     </View>
   );
 };

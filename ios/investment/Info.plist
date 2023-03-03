@@ -65,6 +65,8 @@
 		<string>OpenSans-Regular.ttf</string>
 		<string>OpenSans-SemiBold.ttf</string>
 		<string>OpenSans-SemiBoldItalic.ttf</string>
+		<string>DroidSans-Bold.ttf</string>
+		<string>DroidSans.ttf</string>
 	</array>
 </dict>
 </plist>

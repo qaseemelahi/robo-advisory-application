@@ -14,6 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-investment-investmentTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-investment-investmentTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		934566667B5A4B3CA2EA166E /* DroidSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFFCA2B6AD1340EE987663C1 /* DroidSans.ttf */; };
+		B72278DE237F4D10B916A929 /* DroidSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD2FC1214D3646EAA2C81196 /* DroidSans-Bold.ttf */; };
 		C26F183B29B09BBC001DE659 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C26F182F29B09BBC001DE659 /* OpenSans-Regular.ttf */; };
 		C26F183C29B09BBC001DE659 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C26F183029B09BBC001DE659 /* OpenSans-SemiBoldItalic.ttf */; };
 		C26F183D29B09BBC001DE659 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C26F183129B09BBC001DE659 /* OpenSans-BoldItalic.ttf */; };
@@ -67,7 +69,9 @@
 		C26F183829B09BBC001DE659 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		C26F183929B09BBC001DE659 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C26F183A29B09BBC001DE659 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
+		CFFCA2B6AD1340EE987663C1 /* DroidSans.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = DroidSans.ttf; path = ../src/assets/fonts/DroidSans.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FD2FC1214D3646EAA2C81196 /* DroidSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSans-Bold.ttf"; path = "../src/assets/fonts/DroidSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		471B30391D6A4B30A3025091 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD2FC1214D3646EAA2C81196 /* DroidSans-Bold.ttf */,
+				CFFCA2B6AD1340EE987663C1 /* DroidSans.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +172,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				471B30391D6A4B30A3025091 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -292,6 +307,8 @@
 				C26F184629B09BBC001DE659 /* OpenSans-Medium.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B72278DE237F4D10B916A929 /* DroidSans-Bold.ttf in Resources */,
+				934566667B5A4B3CA2EA166E /* DroidSans.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

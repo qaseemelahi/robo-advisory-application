@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import CustomText from '../../../../components/CustomText';
 import {textSize} from '../../../../utils/theme';
@@ -8,16 +8,19 @@ import {GraphData} from '../../../../utils/constants';
 import {GraphDataType} from '../../../../utils/types/types';
 import SortingCard from './SortingCard';
 import {useSelector} from 'react-redux';
+import {useAppSelector} from '../../../../redux';
 
 const Sorting = () => {
-  const localData = useSelector(state => state.graphData);
+  const localData = useAppSelector(state => state.graphData);
   const [sortingData, setSortingData] = useState<GraphDataType[]>(GraphData);
   return (
     <View style={styles.main}>
       <View style={Styles.spaceBetween}>
         <View style={Styles.horizontal}>
           <CustomText style={styles.sortText}>Sort</CustomText>
-          <Sort />
+          <TouchableOpacity activeOpacity={0.6}>
+            <Sort />
+          </TouchableOpacity>
         </View>
         <CustomText style={styles.amount}>Amount(Invested)</CustomText>
       </View>
@@ -25,9 +28,12 @@ const Sorting = () => {
         return (
           <SortingCard
             key={index}
+            arrow={item.arrow}
             price={item.price}
             title={item.name}
             percentage={item.share}
+            from={item.from}
+            to={item.to}
           />
         );
       })}
