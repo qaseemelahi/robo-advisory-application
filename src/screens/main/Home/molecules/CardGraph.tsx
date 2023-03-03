@@ -4,13 +4,12 @@ import {color, fonts, textSize} from '../../../../utils/theme';
 import CustomText from '../../../../components/CustomText';
 import {ArrowDown, GraphLine} from '../../../../assets';
 import {Styles} from '../../../../utils/globalStyles';
-import MyBezierLineChart from '../../../../components/BezierLineChart';
 import LineChart from '../../../../components/LineChart';
 const CardGraph = () => {
   return (
     <View style={styles.cardContainer}>
       <CustomText style={styles.invested}>Invested</CustomText>
-      <View style={[Styles.horizontal, {justifyContent: 'space-between'}]}>
+      <View style={Styles.spaceBetween}>
         <View style={Styles.horizontal}>
           <CustomText style={styles.price}>$3,99,990</CustomText>
           <View style={[Styles.horizontal, styles.graphContainer]}>
@@ -31,7 +30,7 @@ const CardGraph = () => {
           $4,79,988
         </CustomText>
       </View>
-      <LineChart width={''} height={''} />
+      <LineChart />
     </View>
   );
 };
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: color.white,
     width: 105,
     height: 36,
-    // marginRight: 10,
     borderRadius: 5,
     paddingHorizontal: 10,
   },

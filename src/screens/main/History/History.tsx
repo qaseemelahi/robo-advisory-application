@@ -1,17 +1,15 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   StyleSheet,
-  Text,
   View,
   SafeAreaView,
   ScrollView,
-  Alert,
   Dimensions,
 } from 'react-native';
 import React, {useState} from 'react';
 import {
   color,
   DoridFonts,
-  fonts,
   series,
   sliceColor,
   widthAndHeight,
@@ -38,7 +36,7 @@ const History = () => {
     ],
   };
   const chartBar = useAppSelector(state => state.barChartData);
-  const [selectedId, setSelectedId] = useState(0);
+  const [selectedId, setSelectedId] = useState(ButtonsData.length - 1);
   const handleSection = (id: number) => {
     if (selectedId === id) {
       return null;
@@ -125,16 +123,17 @@ const History = () => {
                   onPress={() => handleSection(index)}
                   title={item.name}
                   titleTextSize={15}
-                  titleColor={index == selectedId ? color.white : color.primary}
-                  buttonStyle={{
-                    width: 140,
-                    marginLeft: 10,
-                    borderRadius: 30,
-                    borderColor: color.primary,
-                    borderWidth: index == selectedId ? 0 : 1,
-                    backgroundColor:
-                      index == selectedId ? color.primary : color.white,
-                  }}
+                  titleColor={
+                    index === selectedId ? color.white : color.primary
+                  }
+                  buttonStyle={[
+                    styles.tabButton,
+                    {
+                      borderWidth: index === selectedId ? 0 : 1,
+                      backgroundColor:
+                        index === selectedId ? color.primary : color.white,
+                    },
+                  ]}
                 />
               );
             })}
@@ -143,9 +142,7 @@ const History = () => {
             data={data}
             width={Dimensions.get('window').width} // from react-native
             height={300}
-            // yAxisLabel={'Rs'}
-
-            xAxisLabel={`سنوات`}
+            xAxisLabel={'سنوات'}
             transparent
             chartConfig={{
               backgroundColor: color.white,
@@ -186,4 +183,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   regularText: {textAlign: 'right', color: color.mainGray, marginTop: 10},
+  tabButton: {
+    width: 140,
+    marginLeft: 10,
+    borderRadius: 30,
+    borderColor: color.primary,
+  },
 });

@@ -1,13 +1,12 @@
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 import React from 'react';
-import {color, DoridFonts, fonts} from '../../../utils/theme';
+import {color, DoridFonts} from '../../../utils/theme';
 import {BackIcon, Down, Up} from '../../../assets';
 import CustomText from '../../../components/CustomText';
 import CustomButton from '../../../components/CustomButton';
@@ -15,9 +14,7 @@ import CustomButton from '../../../components/CustomButton';
 const Portfolio = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <TouchableOpacity
-        style={{marginHorizontal: 15, marginTop: 10}}
-        activeOpacity={0.6}>
+      <TouchableOpacity style={styles.backIconContainer} activeOpacity={0.6}>
         <BackIcon width={20} height={20} />
       </TouchableOpacity>
       <View style={styles.wrapContainer}>
@@ -26,7 +23,7 @@ const Portfolio = () => {
           سيؤثر التغير على أموالك على قدرتك على تحمل المخاطر بالإضافة إلى قدراتك
           على التحكم في النفس.
         </CustomText>
-        <View style={{height: 70}} />
+        <View style={styles.spacer} />
         <View>
           <CustomText style={styles.questionHeading}>السؤال 2 من 8</CustomText>
           <CustomText style={styles.question}>
@@ -43,7 +40,8 @@ const Portfolio = () => {
         <CustomButton
           title="استمرار"
           titleTextSize={20}
-          buttonStyle={styles.buttonContainer}></CustomButton>
+          buttonStyle={styles.buttonContainer}
+        />
       </View>
     </SafeAreaView>
   );
@@ -102,5 +100,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: DoridFonts.regular,
     alignSelf: 'flex-end',
+  },
+  backIconContainer: {
+    marginHorizontal: 15,
+    marginTop: 10,
+  },
+  spacer: {
+    height: 70,
   },
 });

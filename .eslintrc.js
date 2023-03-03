@@ -20,11 +20,6 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
-    indent: [
-      'error',
-      2,
-      {SwitchCase: 1, ignoredNodes: ['ConditionalExpression']},
-    ],
     quotes: ['error', 'single', {avoidEscape: true}],
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'off',

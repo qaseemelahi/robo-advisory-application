@@ -16,7 +16,7 @@ import CustomText from './CustomText';
 type ButtonProps = {
   title: string;
   titleColor?: string;
-  onPress?: (event: GestureResponderEvent) => void | Promise<void>;
+  onPress?: (event?: GestureResponderEvent) => void;
   buttonStyle?: StyleProp<ViewStyle>;
   loading?: boolean;
   disabled?: boolean;
@@ -51,7 +51,7 @@ const CustomButton: FC<ButtonProps> = ({
       {loading ? (
         <ActivityIndicator
           size="small"
-          color={!!loaderColor ? loaderColor : color.white}
+          color={loaderColor ? loaderColor : color.white}
         />
       ) : (
         <>
@@ -59,8 +59,8 @@ const CustomButton: FC<ButtonProps> = ({
             style={[
               textStyle,
               {
-                color: !!titleColor ? titleColor : color.white,
-                fontSize: !!titleTextSize ? titleTextSize : textSize.small,
+                color: titleColor ? titleColor : color.white,
+                fontSize: titleTextSize ? titleTextSize : textSize.small,
                 fontFamily: fontFamily ? fontFamily : DoridFonts.regular,
               },
             ]}>

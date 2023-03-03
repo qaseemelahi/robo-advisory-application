@@ -1,23 +1,20 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {FC} from 'react';
 import CustomText from '../../../../components/CustomText';
 import {Styles} from '../../../../utils/globalStyles';
 import {color, fonts, textSize} from '../../../../utils/theme';
-import {LineGraph} from 'react-native-graph';
 import LineChart from '../../../../components/LineChart';
-import MyBezierLineChart from '../../../../components/BezierLineChart';
 import {GreenArrow, YellowArrow} from '../../../../assets';
-import {Area, Chart} from 'react-native-responsive-linechart';
 
 interface iProps {
   title: string;
   price: string;
   percentage: string;
-  arrow: Boolean;
+  arrow: boolean;
   from: string;
   to: string;
 }
-const SortingCard: FC<iProps> = ({
+const PropertyListCard: FC<iProps> = ({
   title,
   price,
   percentage,
@@ -26,12 +23,12 @@ const SortingCard: FC<iProps> = ({
   to,
 }) => {
   return (
-    <View style={Styles.spaceBetween}>
+    <View style={[Styles.spaceBetween, styles.root]}>
       <CustomText style={styles.tille}>{title}</CustomText>
       <LineChart width={100} height={60} from={from} to={to} />
       <View>
         <CustomText style={styles.price}>{price}</CustomText>
-        <View style={[Styles.horizontal, {justifyContent: 'flex-end'}]}>
+        <View style={[Styles.horizontal, styles.priceContainer]}>
           {arrow ? <YellowArrow /> : <GreenArrow />}
           <CustomText
             style={[
@@ -46,9 +43,14 @@ const SortingCard: FC<iProps> = ({
   );
 };
 
-export default SortingCard;
+export default PropertyListCard;
 
 const styles = StyleSheet.create({
+  root: {
+    borderTopColor: color.placeholder,
+    borderTopWidth: 1,
+    paddingTop: 10,
+  },
   tille: {
     fontSize: textSize.h5,
     fontFamily: fonts.semiBold,
@@ -63,7 +65,6 @@ const styles = StyleSheet.create({
   percentage: {
     color: color.green,
     textAlign: 'right',
-    marginTop: 5,
     marginLeft: 5,
   },
   container: {
@@ -81,5 +82,10 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     backgroundColor: color.white,
     transform: [{scaleX: 5}, {scaleY: 1}],
+  },
+  priceContainer: {
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginTop: 3,
   },
 });

@@ -32,14 +32,8 @@ const Exchange = () => {
           setActiveButton={setActiveButton}
         />
 
-        <CustomText
-          style={{
-            fontSize: 17,
-            fontFamily: DoridFonts.regular,
-            textAlign: 'right',
-            marginVertical: 15,
-          }}>
-          {activeButton == true ? 'تاريخ الطلبات' : 'تاريخ الحولات'}
+        <CustomText style={styles.headings}>
+          {activeButton ? 'تاريخ الطلبات' : 'تاريخ الحولات'}
         </CustomText>
         {staticData?.map(item => {
           return (
@@ -84,5 +78,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: color.primary,
     marginVertical: 24,
+  },
+  headings: {
+    fontSize: 17,
+    fontFamily: DoridFonts.regular,
+    textAlign: 'right',
+    marginVertical: 15,
   },
 });

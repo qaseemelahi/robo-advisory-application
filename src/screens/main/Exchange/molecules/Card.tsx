@@ -14,12 +14,12 @@ interface iProps {
 const Card: FC<iProps> = ({title, price, desc, date}) => {
   return (
     <TouchableOpacity style={styles.main} activeOpacity={0.6}>
-      <View style={Styles.spaceBetween}>
+      <View style={styles.textContainer}>
         <CustomText style={styles.price}>{price}</CustomText>
-        <CustomText style={styles.title}>{title}</CustomText>
+        <CustomText style={styles.desc}>{desc}</CustomText>
       </View>
-      <View style={Styles.spaceBetween}>
-        <CustomText style={styles.true}>{desc}</CustomText>
+      <View style={styles.textContainer}>
+        <CustomText style={styles.title}>{title}</CustomText>
         <CustomText style={styles.date}>{date}</CustomText>
       </View>
     </TouchableOpacity>
@@ -32,6 +32,8 @@ const styles = StyleSheet.create({
   main: {
     marginTop: 12,
     marginHorizontal: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   price: {
     fontSize: 15,
@@ -45,11 +47,14 @@ const styles = StyleSheet.create({
   date: {
     fontFamily: DoridFonts.regular,
     color: color.lightGray6,
-    marginTop: 8,
+    marginTop: 5,
     fontSize: 12,
   },
-  true: {
+  desc: {
     color: color.green,
-    marginTop: 8,
+    marginTop: 5,
+  },
+  textContainer: {
+    alignItems: 'center',
   },
 });

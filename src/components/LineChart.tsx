@@ -1,16 +1,32 @@
-import * as React from 'react';
+/* eslint-disable react-native/no-inline-styles */
+import React from 'react';
 import {Dimensions, StyleSheet, View} from 'react-native';
-import {Chart, Area, Line} from 'react-native-responsive-linechart';
+import {Chart, Area} from 'react-native-responsive-linechart';
 import {color} from '../utils/theme';
 
 interface iProps {
-  width: number;
-  height: number;
-  from: string;
-  to: string;
+  width?: string;
+  height?: string;
+  from?: string;
+  to?: string;
 }
 
 const LineChart: React.FC<iProps> = ({width, height, from, to}) => {
+  const data = [
+    {x: -2, y: 15},
+    {x: -1, y: 10},
+    {x: 0, y: 12},
+    {x: 1, y: 7},
+    {x: 2, y: 6},
+    {x: 3, y: 3},
+    {x: 4, y: 5},
+    {x: 5, y: 8},
+    {x: 6, y: 12},
+    {x: 7, y: 14},
+    {x: 8, y: 12},
+    {x: 9, y: 13.5},
+    {x: 10, y: 18},
+  ];
   return (
     <View style={styles.container}>
       <Chart
@@ -18,21 +34,7 @@ const LineChart: React.FC<iProps> = ({width, height, from, to}) => {
           height: height ? height : 140,
           width: width ? width : Dimensions.get('window').width - 40,
         }}
-        data={[
-          {x: -2, y: 15},
-          {x: -1, y: 10},
-          {x: 0, y: 12},
-          {x: 1, y: 7},
-          {x: 2, y: 6},
-          {x: 3, y: 3},
-          {x: 4, y: 5},
-          {x: 5, y: 8},
-          {x: 6, y: 12},
-          {x: 7, y: 14},
-          {x: 8, y: 12},
-          {x: 9, y: 13.5},
-          {x: 10, y: 18},
-        ]}
+        data={data}
         padding={{left: 0, bottom: 20, right: 0, top: 0}}
         xDomain={{min: -2, max: 10}}
         yDomain={{min: -4, max: 15}}>
@@ -44,18 +46,6 @@ const LineChart: React.FC<iProps> = ({width, height, from, to}) => {
             },
           }}
         />
-        {/* <Line
-          initialTooltipIndex={3}
-          hideTooltipOnDragEnd
-          smoothing="bezier"
-          theme={{
-            stroke: {color: color.graphColor2, width: 5},
-            scatter: {
-              default: {width: 8, height: 8, rx: 4, color: color.graphColor2},
-              selected: {color: color.black},
-            },
-          }}
-        /> */}
       </Chart>
     </View>
   );

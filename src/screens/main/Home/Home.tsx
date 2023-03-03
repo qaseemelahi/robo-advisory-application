@@ -1,10 +1,10 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 import React from 'react';
 import Header from '../../../components/UserHeader';
 import {color} from '../../../utils/theme';
 import SearchBar from './molecules/SearchBar';
 import CardGraph from './molecules/CardGraph';
-import Sorting from './molecules/Sorting';
+import PropertyList from './molecules/PropertyList';
 
 const Home = () => {
   const {mainContainer, wrapContainer} = styles;
@@ -14,7 +14,7 @@ const Home = () => {
         <Header />
         <SearchBar />
         <CardGraph />
-        <Sorting />
+        <PropertyList />
       </View>
     </SafeAreaView>
   );

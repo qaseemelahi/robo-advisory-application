@@ -1,21 +1,18 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import React from 'react';
 import CustomText from '../../../../components/CustomText';
 import {textSize} from '../../../../utils/theme';
 import {Sort} from '../../../../assets';
 import {Styles} from '../../../../utils/globalStyles';
-import {GraphData} from '../../../../utils/constants';
-import {GraphDataType} from '../../../../utils/types/types';
-import SortingCard from './SortingCard';
-import {useSelector} from 'react-redux';
+
+import PropertyListCard from './PropertyListCard';
 import {useAppSelector} from '../../../../redux';
 
-const Sorting = () => {
+const PropertyList = () => {
   const localData = useAppSelector(state => state.graphData);
-  const [sortingData, setSortingData] = useState<GraphDataType[]>(GraphData);
   return (
     <View style={styles.main}>
-      <View style={Styles.spaceBetween}>
+      <View style={[Styles.spaceBetween, styles.container]}>
         <View style={Styles.horizontal}>
           <CustomText style={styles.sortText}>Sort</CustomText>
           <TouchableOpacity activeOpacity={0.6}>
@@ -26,7 +23,7 @@ const Sorting = () => {
       </View>
       {localData?.map((item, index) => {
         return (
-          <SortingCard
+          <PropertyListCard
             key={index}
             arrow={item.arrow}
             price={item.price}
@@ -41,7 +38,7 @@ const Sorting = () => {
   );
 };
 
-export default Sorting;
+export default PropertyList;
 
 const styles = StyleSheet.create({
   main: {
@@ -53,5 +50,8 @@ const styles = StyleSheet.create({
   },
   amount: {
     fontSize: textSize.medium,
+  },
+  container: {
+    marginBottom: 16,
   },
 });

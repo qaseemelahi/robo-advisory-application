@@ -26,33 +26,29 @@ export type MainStackParams = {
 const TabStack = createBottomTabNavigator<MainStackParams>();
 const tabIconWidth = 27;
 const tabIconHeight = 27;
+
 const tabLabel = (title: string) => {
-  if (title == ScreenNames.Home) {
-    return 'Home';
-  } else if (title == ScreenNames.Porfolio) {
-    return 'Porfolio';
-  } else if (title == ScreenNames.Exchange) {
+  if (title === ScreenNames.Exchange) {
     return '';
-  } else if (title == ScreenNames.History) {
-    return 'History';
-  } else {
-    return 'Profile';
   }
+
+  return title;
 };
 const tabIcon = (name: string, focused: boolean) => {
-  if (name == ScreenNames.Home) {
+  // I could'nt find other icons so I added logic but will change icons once I get it
+  if (name === ScreenNames.Home) {
     return focused ? (
       <ActiveHome width={tabIconWidth} height={tabIconHeight} />
     ) : (
       <InActiveHome width={tabIconWidth} height={tabIconHeight} />
     );
-  } else if (name == ScreenNames.Porfolio) {
+  } else if (name === ScreenNames.Porfolio) {
     return focused ? (
       <Porfolio width={tabIconWidth} height={tabIconHeight} />
     ) : (
       <Porfolio width={tabIconWidth} height={tabIconHeight} />
     );
-  } else if (name == ScreenNames.Exchange) {
+  } else if (name === ScreenNames.Exchange) {
     return (
       <View style={styles.box}>
         {focused ? (
@@ -62,13 +58,13 @@ const tabIcon = (name: string, focused: boolean) => {
         )}
       </View>
     );
-  } else if (name == ScreenNames.History) {
+  } else if (name === ScreenNames.History) {
     return focused ? (
       <History width={tabIconWidth} height={tabIconHeight} />
     ) : (
       <History width={tabIconWidth} height={tabIconHeight} />
     );
-  } else if (name == ScreenNames.Profile) {
+  } else if (name === ScreenNames.Profile) {
     return focused ? (
       <Profile width={tabIconWidth} height={tabIconHeight} />
     ) : (
